@@ -1,0 +1,26 @@
+#!/bin/bash
+echo "choisissez une option"
+echo -e  "1) gestion_bdd\n 2) reporting \n  d’un utilisateur \n 6) 3) Quitter l’utilitaire\n"
+regex="^[A-Za-z]+" #affecte à une valeur regex toutes les lettres de l'alphabet
+
+read opt #on lit la variable opt et on écrit dedans
+if [[ "$opt" =~ $regex ]] #on test si opt est égal à regex
+then
+echo "its not an integer" #on affiche que ce n'est pas un integer si opt est une lettre
+echo -e "1) gestion_bdd\n 2) reporting \n  d’un utilisateur \n 6) 3) Quitter l’utilitaire \n" 
+#on affiche le menu puis on relance opt
+read opt
+while [[ $opt -lt 3 ]] #une boucle tant la valeur opt est inférieur à 8
+do
+case $opt in 
+#si opt=1 voir gestion_bdd
+1) ./5-1_gestion_bdd ; echo -e  "1) gestion_bdd\n 2) reporting \n  d’un utilisateur \n 6) 3) Quitter l’utilitaire \n";;
+# si opt=2  voir reporting
+2)  ./5-2_reporting ; echo -e  "1) gestion_bdd\n 2) reporting \n  d’un utilisateur \n 6) 3) Quitter l’utilitaire \n";;
+
+
+esac 
+read opt #lire de nouveau opt après l'utilitaire'
+
+done
+fi

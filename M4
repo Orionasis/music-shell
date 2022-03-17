@@ -1,0 +1,34 @@
+#! /bin/bash
+
+#Hicham
+
+clear
+
+echo "                Nous contacter
+
+1- Par mail
+2- Par courrier
+3- Par téléphone
+
+4- Revenir au menu précédent"
+
+while [[ $opt -lt 4 ]] 
+
+do                                     # -lt (less than) Tant que l'utilisateur saisis un nombre inférieur à 4
+
+read opt                               # Lecture de la saisie de l'utilisateur
+
+case $opt in                           # Case avec la variable $opt
+
+1) ./Menus/M4-1;;                      # Redirection vers le menu M1 Par mail
+  
+2) ./Menus/M4-2;;                      # Redirection vers le menu M2 Par courrier
+
+3) ./Menus/M4-3;;                      # Redirection vers le menu M3 Par téléphone
+
+4) ./Menus/MP;;                        # Redirection vers le menu MP Menu principal
+
+
+esac                                   # Fin du case
+
+done                                   # Fin de la boucle while

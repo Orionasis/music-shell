@@ -1,0 +1,40 @@
+#! /bin/bash
+
+#William
+
+clear
+
+echo "                Rechercher un produit
+
+1- Style de musique
+2- Groupe
+3- Titre d'album
+4- Support
+
+5- Revenir au menu précédent
+
+Votre choix :"
+read opt                                          # Lecture de la saisie de l'utilisateur
+
+
+while [[ $opt -gt 0 ]] && [[ $opt -lt 6 ]]
+
+do                                               # -gt (greater than) et -lt (less than) Tant que l'utilisateur saisi un nombre supèrieur à 0 et inférieur à 6
+
+case $opt in                                     # Case avec la variable $opt
+
+1) ./M3-1;;                                      # Redirection vers le menu M1 Par mail
+  
+2) ./M3-2;;                                      # Redirection vers le menu M2 Par courrier
+
+3) ./M3-3;;                                      # Redirection vers le menu M3 Par téléphone
+
+4) ./M3-4;;                                      # Redirection vers le menu M3 Par téléphone
+
+5) ./MP;;                                        # Redirection vers le menu MP Menu principal
+
+esac                                             # Fin du case
+
+done                                             # Fin de la boucle while
+./M3
+

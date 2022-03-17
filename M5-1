@@ -1,0 +1,34 @@
+#!/bin/bash
+echo "choisissez une option"
+echo -e  "1) utilisateur\n 2) abonnement \n  3)stock \n  4) commandes\n 5) emprunts 6)relance 7) retour vers le fichier précédent"
+regex="^[A-Za-z]+" #affecte à une valeur regex toutes les lettres de l'alphabet
+
+read opt #on lit la variable opt et on écrit dedans
+if [[ "$opt" =~ $regex ]] #on test si opt est égal à regex
+then
+echo "its not an integer" #on affiche que ce n'est pas un integer si opt est une lettre
+echo -e "1) utilisateur\n 2) abonnement \n  3)stock \n  4) commandes\n 5) emprunts \n 6) relance \n 7) retour vers le fichier précédent"
+#on affiche le menu puis on relance opt
+read opt
+while [[ $opt -lt 7 ]] #une boucle tant la valeur opt est inférieur à 7
+do
+case $opt in 
+#si opt=1 exécuter menu utilisateur
+1) ./M5-1-1 ; echo -e "1) utilisateur\n 2) abonnement \n  3)stock \n  4) commandes\n 5) emprunts \n 6) relance \n 7) retour vers le fichier précédent";;
+# si opt=2  exécuter menu abonnement
+2) ./M5-1-2 ; echo -e "1) utilisateur\n 2) abonnement \n  3)stock \n  4) commandes\n 5) emprunts \n 6) relance \n 7) retour vers le fichier précédent";;
+# si opt=3  exécuter menu stock
+3) ./M5-1-3 ; echo -e "1) utilisateur\n 2) abonnement \n  3)stock \n  4) commandes\n 5) emprunts \n 6) relance \n 7) retour vers le fichier précédent";;
+# si opt=4  exécuter menu commandes
+4) ./M5-1-4 ; echo -e  "1) utilisateur\n 2) abonnement \n  3)stock \n  4) commandes\n 5) emprunts \n 6) relance \n 7) retour vers le fichier précédent";;
+# si opt=5  exécuter menu emprunts
+5) ./M5-1-5 ; echo -e "1) utilisateur\n 2) abonnement \n  3)stock \n  4) commandes\n 5) emprunts \n 6) relance \n 7) retour vers le fichier précédent";;
+# si opt=6  exécuter menu relance
+6) ./M5-1-6 ; echo -e "1) utilisateur\n 2) abonnement \n  3)stock \n  4) commandes\n 5) emprunts \n 6) relance \n 7) retour vers le fichier précédent";;
+
+esac 
+read opt #lire de nouveau opt après l'utilitaire'
+
+done
+fi
+./M5

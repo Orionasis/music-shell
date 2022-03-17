@@ -1,0 +1,15 @@
+#! /bin/bash
+
+clear
+
+echo "                Gestion BDD
+
+1- Utilisateurs
+2- Abonnement
+3- Stock
+4- Commandes
+5- Emprunts
+6- Relances
+
+7- Revenir au menu précédent"
+

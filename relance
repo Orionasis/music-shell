@@ -1,0 +1,17 @@
+#!/bin/bash
+v=cut -d ";" -f5 $1
+j=cut -d ";" -f4 $1
+i=0
+while( -z $v ); do
+i=1
+if( i==1 ); then
+j=expr `j%d + 7`
+else
+if (i==2 ); then
+j=expr `j%d + 7`
+fi
+fi
+done
+
+
+
